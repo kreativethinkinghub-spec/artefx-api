@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: artefx-api
+    runtime: node
+    region: ohio
+    plan: starter
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PAYSTACK_SECRET_KEY
+        sync: false          # set in Render dashboard
+      - key: GMAIL_USER
+        sync: false          # enterprise@kth-tech.com
+      - key: GMAIL_PASS
+        sync: false          # Gmail app password (16-char, no spaces)
